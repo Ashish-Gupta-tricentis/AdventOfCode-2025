@@ -5,8 +5,8 @@ namespace AdventOfCode2025.Day_3;
 
 public class Day3
 {
-    //string input = "987654321111111\r\n811111111111119\r\n234234234234278\r\n818181911112111";
-    string input = File.ReadAllText("Day-3/input.txt");
+    string input = "811111111111119\r\n234234234234278\r\n818181911112111";
+    //string input = File.ReadAllText("Day-3/input.txt");
     public void Part1()
     {
         var lines = input.Split("\r\n");
@@ -39,14 +39,14 @@ public class Day3
         var highestPowerInRows = new List<long>();
         foreach (var line in lines)
         {
-            var result = string.Empty;
-            GetTheResult(line, size, ref result);
-            highestPowerInRows.Add(Convert.ToInt64(result));
+            var result =  new StringBuilder();
+            GetTheResult(line, size, result);
+            highestPowerInRows.Add(Convert.ToInt64(result.ToString()));
         }
         Console.WriteLine(highestPowerInRows.Sum());
     }
 
-    private void GetTheResult(string line, int size, ref string result)
+    private void GetTheResult(string line, int size, StringBuilder result)
     {
         if (result.Length == size)
         {
@@ -54,9 +54,9 @@ public class Day3
         }
         var windowSize = line.Length - (size - result.Length - 1);
         int maxIndex = FindMaxIndex(line.Substring(0, windowSize));
-        result += line[maxIndex];
+        result.Append(line[maxIndex]);
         line = line.Remove(0, maxIndex + 1);
-        GetTheResult(line, size, ref result);
+        GetTheResult(line, size, result);
     }
 
     private int FindMaxIndex(string sub)
