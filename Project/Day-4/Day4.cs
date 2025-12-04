@@ -1,4 +1,6 @@
-﻿namespace AdventOfCode2025.Day_4;
+﻿using System.Diagnostics;
+
+namespace AdventOfCode2025.Day_4;
 
 public class Day4
 {
@@ -49,6 +51,7 @@ public class Day4
 
     public void Part2()
     {
+        var stopwatch = Stopwatch.StartNew();
         var matrix = input.Split("\r\n").Select(line => line.ToCharArray()).ToArray();
         var totalRolls = 0;
         while (true)
@@ -71,6 +74,9 @@ public class Day4
                 break;
             }
         }
+        stopwatch.Stop();
+        Console.WriteLine($"Execution time: {stopwatch.ElapsedMilliseconds} ms");
+        Console.WriteLine($"Execution time: {stopwatch.Elapsed.TotalSeconds:F3} seconds");
         Console.WriteLine(totalRolls);
     }
 }
