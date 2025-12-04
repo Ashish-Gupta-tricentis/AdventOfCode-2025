@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Project.Day_2;
+namespace AdventOfCode2025.Day_2;
 
 internal class Day_2
 {
