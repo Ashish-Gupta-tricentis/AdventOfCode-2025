@@ -8,7 +8,7 @@ public class Day4
     string input = File.ReadAllText("Day-4/input.txt");
     public void Part1()
     {
-        var matrix = input.Split("\r\n").Select(line => line.ToCharArray()).ToArray();
+        var matrix = input.Split(Environment.NewLine).Select(line => line.ToCharArray()).ToArray();
         var totalRolls = 0;
         for (int i = 0; i < matrix.Length; i++)
         {
@@ -52,7 +52,7 @@ public class Day4
     public void Part2()
     {
         var stopwatch = Stopwatch.StartNew();
-        var matrix = input.Split("\r\n").Select(line => line.ToCharArray()).ToArray();
+        var matrix = input.Split(Environment.NewLine).Select(line => line.ToCharArray()).ToArray();
         var totalRolls = 0;
         while (true)
         {
