@@ -1,8 +1,5 @@
-﻿
+﻿using AdventOfCode2025.Day_7;
 
-
-using AdventOfCode2025.Day_6;
-
-var day = new Day6();
+var day = new Day7();
 day.Part2();
 Console.ReadLine();
